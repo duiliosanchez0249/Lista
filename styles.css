@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    padding: 40px 20px;
+    transition: 0.3s;
+}
+
+.container {
+    max-width: 520px;
+    margin: auto;
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modo-btn {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #444;
+    color: white;
+    cursor: pointer;
+}
+
+/* Formulario */
+#form-tarea {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+#form-tarea input,
+#form-tarea select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+}
+
+/* Filtros */
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filtro {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.filtro.activo {
+    background: #667eea;
+    color: white;
+}
+
+/* Lista */
+#lista-tareas {
+    list-style: none;
+}
+
+.tarea {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background: #f8f9fa;
+    animation: aparecer 0.3s ease;
+}
+
+.tarea.completada {
+    opacity: 0.6;
+}
+
+.tarea.completada .tarea-texto {
+    text-decoration: line-through;
+}
+
+.por-vencer {
+    border-left: 5px solid orange;
+    background: #fff3cd;
+}
+
+.btn-eliminar,
+.btn-editar {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+/* Animación eliminar */
+.tarea.eliminando {
+    opacity: 0;
+    transform: translateX(60px);
+    transition: 0.3s ease;
+}
+
+/* Contador */
+.contador {
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Modo oscuro */
+body.oscuro {
+    background: #121212;
+}
+
+body.oscuro .container {
+    background: #1e1e1e;
+    color: white;
+}
+
+body.oscuro .tarea {
+    background: #2a2a2a;
+}
+
+/* Animación */
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.sin-tareas {
+    text-align: center;
+    color: #888;
+    padding: 30px;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Lista de Tareas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📝 Mi Lista de Tareas</h1>
+
+        <!-- Botón modo oscuro -->
+        <button id="modo-btn" class="modo-btn">🌙 Modo Oscuro</button>
+
+        <!-- Formulario -->
+        <form id="form-tarea">
+            <input type="text" id="input-tarea" placeholder="¿Qué necesitas hacer?" required>
+
+            <input type="date" id="input-fecha">
+
+            <select id="input-categoria">
+                <option value="general">General</option>
+                <option value="trabajo">Trabajo</option>
+                <option value="personal">Personal</option>
+                <option value="escuela">Escuela</option>
+            </select>
+
+            <button type="submit">Agregar</button>
+        </form>
+
+        <!-- Filtros -->
+        <div class="filtros">
+            <button class="filtro activo" data-filtro="todas">Todas</button>
+            <button class="filtro" data-filtro="pendientes">Pendientes</button>
+            <button class="filtro" data-filtro="completadas">Completadas</button>
+        </div>
+
+        <!-- Lista -->
+        <ul id="lista-tareas"></ul>
+
+        <!-- Contador -->
+        <p class="contador">
+            <span id="contador-pendientes">0</span> tareas pendientes
+        </p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
